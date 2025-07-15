@@ -38,44 +38,45 @@ In many colleges, students find it difficult to explore or join campus clubs. Cl
 
 1. **Clone the repo**
 
-    git clone https://github.com/your-username/clubkonnect.git
-    cd clubkonnect
+- git clone https://github.com/your-username/clubkonnect.git
+- cd clubkonnect
 
 2. **Install Dependencies**
 
-    npm install
+- npm install
 
 3. **Set up Firebase**
 
-    -Create a Firebase project at console.firebase.google.com
-    -Enable Authentication (Email/Password)
-    -Create Firestore Database
-    -Add a Web App and copy Firebase config
-    -Create a firebase.js inside "src/" folder:
+- Create a Firebase project at console.firebase.google.com
+- Enable Authentication (Email/Password)
+- Create Firestore Database
+- Add a Web App and copy Firebase config
+- Create a firebase.js inside "src/" folder:
 
-    **Code of firebase.js file** 
+**Code of firebase.js file** 
+
     // src/firebase.js
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+    import { initializeApp } from "firebase/app";
+    import { getAuth } from "firebase/auth";
+    import { getFirestore } from "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  // ...rest of config
-};
+    const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    // ...rest of config
+    };
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+    const app = initializeApp(firebaseConfig);
+    export const auth = getAuth(app);
+    export const db = getFirestore(app);
 ---
 
 4. **Run the web app locally**
 
-    CLI command: npm run dev
-    and then
-    Visit the link provided: http://localhost:1234(any link of this sort that you got)
+- CLI command: npm run dev
+-  and then
+-  Visit the link provided: http://localhost:1234(any link of this sort that you got)
 
 ---
 
@@ -84,3 +85,7 @@ export const db = getFirestore(app);
 -Firebase Authentication
 -Cloud Firestore
 -Google IDX (for development environment)
+
+---
+
+### Thank You
