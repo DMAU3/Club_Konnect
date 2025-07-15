@@ -1,41 +1,40 @@
-# 💡 ClubKonnect
+# ClubKonnect
 
 **ClubKonnect** is a simple web application that connects students with college clubs and allows club admins to manage their members. Built for ease of use and real-time collaboration.
 
 ---
 
-## 🎯 Problem Statement
+## Problem Statement
 
 In many colleges, students find it difficult to explore or join campus clubs. ClubKonnect solves this by providing a central place where students can view all available clubs and join the ones they’re interested in. Club admins can also see who joined and manage events or announcements.
 
 ---
 
-## 🚀 Features
+## Features
 
-### 👩‍🎓 For Students:
+### For Students:
 - View all available clubs
 - Read club descriptions
 - Join clubs easily
 - See which clubs you’ve joined
 
-### 🧑‍💼 For Club Admins:
+### For Club Admins:
 - Log in securely
 - View students who joined their club
-- Manage club-related data
-- Update club details (future scope)
+- Manage club-related data and update club details
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - **Frontend**: React (Vite)
 - **Backend**: Firebase Firestore (NoSQL)
 - **Authentication**: Firebase Auth
-- **Deployment/Dev**: Google IDX or Firebase CLI (optional)
+- **Deployment/Dev**: Google IDX
 
 ---
 
-## 🛠️ Setup & Run Locally
+## Setup & Run Locally
 
 1. **Clone the repo**
 
@@ -51,20 +50,37 @@ In many colleges, students find it difficult to explore or join campus clubs. Cl
     -Create a Firebase project at console.firebase.google.com
     -Enable Authentication (Email/Password)
     -Create Firestore Database
-    -Replace Firebase config inside firebase.js with your project’s credentials
+    -Add a Web App and copy Firebase config
+    -Create a firebase.js inside "src/" folder:
 
-4. **Run the web app**
+    **Code of firebase.js file** 
+    // src/firebase.js
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-    npm run dev
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  // ...rest of config
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+---
+
+4. **Run the web app locally**
+
+    CLI command: npm run dev
+    and then
+    Visit the link provided: http://localhost:1234(any link of this sort that you got)
 
 ---
 
 ## Google Technologies Used
 
-Firebase Authentication
-
-Cloud Firestore
-
-Firebase Hosting (Optional)
-
-Google IDX (for development environment)
+-Firebase Authentication
+-Cloud Firestore
+-Google IDX (for development environment)
